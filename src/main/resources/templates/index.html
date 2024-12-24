@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{css/style.css}" href="../static/css/style.css">
+</head>
+<body>
+<header>
+    <div th:replace="~{common/fragments::header1('admin')}"></div> <!--div를 header로 바꿔줌-->
+
+    <div th:insert="~{common/fragments::header1('')}"></div> <!--div가 부모로 div안에 귀속-->
+</header>
+
+<h1>template/index.html</h1> <!--서버 탈때-->
+<!--@{/board/write} 같이 /가 있으면 @으로 묶어줄것-->
+<a href="intro.html" th:href="@{/intro}">intro.html</a>
+
+
+<footer>
+    <div th:replace="~{common/fragments::footer1('Comp TM')}"></div>
+
+    <div th:insert="~{common/fragments::footer1('naver')}"></div>
+</footer>
+</body>
+</html>

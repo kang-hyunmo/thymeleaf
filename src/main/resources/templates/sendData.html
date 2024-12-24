@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>client --> server 파라미터 전달</h1>
+<h2> a 태그 활용</h2>
+<!--숫자가 아니라 문자열로 넘김-->
+<a href="/a_send?num1=100&num2=200">전송1</a>
+<a th:href="@{/a_send?num1=10&num2=20}">전송2</a>
+<a th:href="@{/a_send(num1=1,num2=2)}">전송3</a>
+
+<h2>form 데이터 전송 nonDto</h2>
+<form th:action="@{/nonDtoSend}">
+    <input type="text" name="name" id="name"> <br>
+    <input type="number" min="1" name="age" > <br>
+    <input type="text" name="addr" > <br>
+    <input type="submit" name="전송" > <br>
+</form>
+
+<h2>form 데이터 전송 dto</h2>
+<form th:action="@{/dtoSend}" method="post">
+    <input type="text" name="name"> <br>
+    <input type="number" min="1" name="age" > <br>
+    <input type="text" name="addr" > <br>
+    <input type="submit" name="전송" > <br>
+</form>
+
+</body>
+</html>
