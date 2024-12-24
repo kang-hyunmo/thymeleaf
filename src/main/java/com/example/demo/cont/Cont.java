@@ -48,7 +48,7 @@ public class Cont {
 
         return "/t_output";
     }
-//    @RequestMapping
+    //    @RequestMapping
     @GetMapping("/t_cont")
     public String cont(Model model, HttpSession session) {
         session.setAttribute("user_id","admin");
@@ -90,9 +90,9 @@ public class Cont {
     }
     @GetMapping("/nonDtoSend")
     public String nonDtoSend( String name, //@RequestParam 생략
-                             @RequestParam(value = "age",defaultValue = "1") int age,
+                              @RequestParam(value = "age",defaultValue = "1") int age,
                               String addr, //@RequestParam 생략
-                             Model model) {
+                              Model model) {
         System.out.println("name:"+name);
         System.out.println("age:"+age);
         System.out.println("addr:"+addr);
@@ -102,7 +102,7 @@ public class Cont {
         return "s_result";
     }
     @PostMapping("/dtoSend")
-    public String dtoSend(@ModelAttribute DataDto dto,Model model) {
+    public String dtoSend(@ModelAttribute DataDto dto, Model model) {
         System.out.println("name:"+dto.getName());
         System.out.println("age:"+dto.getAge());
         System.out.println("addr:"+dto.getAddr());
@@ -122,5 +122,5 @@ public class Cont {
         System.out.println("addr:"+dto.getAddr());
         return "redirect:/user";
     }
-    
+
 }
